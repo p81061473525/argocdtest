@@ -44,7 +44,7 @@ jobs:
       
       - name: Install argocd 
         run: | 
-          argocd login 3.112.73.38:31356 | yes
+          argocd login 3.112.73.38:31356 
           
       # - name: Debug
       #   run: | 
