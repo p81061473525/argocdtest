@@ -44,9 +44,9 @@ jobs:
       
       - name: login argocd 
         run: | 
-          export ARGOCD_SERVER=3.112.73.38:30608
+          export ARGOCD_SERVER=3.112.73.38:31356
           export ARGOCD_AUTH_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcmdvY2QiLCJzdWIiOiJhbGljZTphcGlLZXkiLCJuYmYiOjE2OTU1NDAzMTgsImlhdCI6MTY5NTU0MDMxOCwianRpIjoiNjBhNjBhNTctZjRiOC00MzI0LWI4MjUtOTM0M2NiYzlkMDZkIn0.GucIvSDtHrqZL0_rtnNZEI0nbnwp-qtT2WGfuV3xFHY
-          argocd app --insecure-skip-tls-verify sync guestbook
+          argocd app sync guestbook --insecure-skip-tls-verify
           
           
       # - name: Debug
