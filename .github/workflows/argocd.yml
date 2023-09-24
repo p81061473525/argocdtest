@@ -47,7 +47,7 @@ jobs:
           export ARGOCD_SERVER=3.112.73.38:31356
           export ARGOCD_AUTH_TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcmdvY2QiLCJzdWIiOiJhZG1pbjphcGlLZXkiLCJuYmYiOjE2OTU1NDIwMzIsImlhdCI6MTY5NTU0MjAzMiwianRpIjoiM2Q0ZTQyY2MtMDlmMi00YWFiLTk4NzgtMjNlYTdlM2RjYTA0In0.0G28_kQ6gHiJkNk7ZOGQaTN9lga7yWmlaQ0CzxP-XiY
           export ARGOCD_OPTS='--insecure'
-          argocd app sync ARGOCDTEST-LOING
+          argocd app sync argocdtest-long
           
       # - name: Debug
       #   run: | 
