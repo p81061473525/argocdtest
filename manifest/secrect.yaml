@@ -1,1 +1,12 @@
 ---
+apiVersion: v1
+kind: Secret
+metadata:
+  creationTimestamp: "2023-11-25T15:37:33Z"
+  name: mysql-db-connection
+  namespace: default
+  resourceVersion: "14119"
+  uid: 07593e08-da83-45c9-b7ef-683d8e2b25ce
+type: Opaque
+data:
+#  .test-env: ${這是變數，我還沒想要要怎麼符合 gitops}
