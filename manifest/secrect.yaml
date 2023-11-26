@@ -1,12 +1,20 @@
+# 這是一個範例文件
+# 產生方式
+# kubectl create secret generic prod-secrets --from-env-file=.test-env --dry-run=client -o yaml > mysql-db-connection.yaml
 ---
 apiVersion: v1
+data:
+  DB_HOST: 範例變數
+  DB_PASSWORD: 範例變數
+  DB_PORT: 範例變數
+  DB_USER: 範例變數
+  GENDER: 範例變數
+  NAME: 範例變數
+  REDIS_HOST: ""
+  REDIS_PASSWORD: ""
+  REDIS_PORT: ""
+  REDIS_USER: ""
 kind: Secret
 metadata:
-  creationTimestamp: "2023-11-25T15:37:33Z"
+  creationTimestamp: null
   name: mysql-db-connection
-  namespace: default
-  resourceVersion: "14119"
-  uid: 07593e08-da83-45c9-b7ef-683d8e2b25ce
-type: Opaque
-data:
-#  .test-env: ${這是變數，我還沒想要要怎麼符合 gitops}
