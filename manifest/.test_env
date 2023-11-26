@@ -1,0 +1,13 @@
+# 這是範例檔案
+NAME=martin
+GENDER=male
+
+DB_HOST=rds.amazonaws.com
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=abcdefghijk
+
+REDIS_HOST=
+REDIS_PORT=
+REDIS_USER=
+REDIS_PASSWORD=
