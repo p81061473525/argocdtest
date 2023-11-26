@@ -8,6 +8,6 @@ spec:
     app: php
   ports:
     - protocol: TCP
-      port: 9900
+      port: 9000
       targetPort: 9000
   type: ClusterIP
