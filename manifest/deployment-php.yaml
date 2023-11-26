@@ -1,2 +1,28 @@
 ---
-
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-deployment 
+spec:
+  replicas: 3  
+  selector:
+    matchLabels:
+      app: php
+  template:
+    metadata:
+      labels:
+        app: php
+    spec:
+      containers:
+      - name: php
+        image: php:8.2-fpm-bullseye
+        ports:
+        - containerPort: 9000
+        volumeMounts:
+        - name: secret-volume
+          readOnly: true
+          mountPath: "/etc/secret-volume"
+      volumes:
+      - name: secret-volume
+        secret:
+          secretName: mysql-db-connection
