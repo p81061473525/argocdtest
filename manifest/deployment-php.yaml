@@ -18,11 +18,6 @@ spec:
         image: php:8.2-fpm-bullseye
         ports:
         - containerPort: 9000
-        volumeMounts:
-        - name: secret-volume
-          readOnly: true
-          mountPath: "/etc/secret-volume"
-      volumes:
-      - name: secret-volume
-        secret:
-          secretName: mysql-db-connection
+        envFrom:
+        - secretRef:
+            name: mysql-db-connection
