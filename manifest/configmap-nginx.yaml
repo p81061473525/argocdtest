@@ -1,5 +1,5 @@
 # 產生自以下指令
-# kubectl create configmap nginx-configmap --from-file=./nginx/nginx.conf -o yaml --dry-run=client >> nginx-configmap.yaml
+# kubectl create configmap nginx-configmap --from-file=./nginx/nginx.conf -o yaml --dry-run=client >> -configmap.yaml
 ---
 apiVersion: v1
 data:
