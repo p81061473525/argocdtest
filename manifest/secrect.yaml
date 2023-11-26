@@ -1,6 +1,6 @@
 # 這是一個範例文件
 # 產生方式
-# kubectl create secret generic prod-secrets --from-env-file=.test-env --dry-run=client -o yaml > mysql-db-connection.yaml
+# kubectl create secret generic prod-secrets --from-env-file=.test-env --dry-run=client -o yaml > secrect.yaml
 ---
 apiVersion: v1
 data:
