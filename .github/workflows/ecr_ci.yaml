@@ -47,4 +47,4 @@ jobs:
         run: sudo docker tag peter:latest public.ecr.aws/w3l0w0b0/peter_tester:latest
 
       - name: docker push public.ecr.aws/w3l0w0b0/peter_tester/peter_tester:latest
-        run: sudo docker push public.ecr.aws/w3l0w0b0/peter_tester:latest 
+        run: sudo docker image push public.ecr.aws/w3l0w0b0/peter_tester:latest 
