@@ -38,13 +38,13 @@ jobs:
         run: sudo systemctl restart docker 
         
       - name: dokcer build 
-        run: sudo docker build -t peter_tester .
+        run: docker build -t peter_tester .
 
       - name: login ECR
         run: aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/w3l0w0b0
 
       - name: docker tag nginx_test:latest 
-        run: sudo docker tag peter_tester:latest public.ecr.aws/w3l0w0b0/peter_tester:latest
+        run: docker tag peter_tester:latest public.ecr.aws/w3l0w0b0/peter_tester:latest
 
       - name: docker push public.ecr.aws/w3l0w0b0/peter_tester/peter_tester:latest
-        run: sudo docker push public.ecr.aws/w3l0w0b0/peter_tester:latest 
+        run: docker push public.ecr.aws/w3l0w0b0/peter_tester:latest 
