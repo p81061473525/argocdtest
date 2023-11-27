@@ -4,9 +4,11 @@ name: CI
 
 on:
   workflow_call:
-
-  # push:
-  #   branches: [ "main" ]
+    secrets:
+      AWS_ID:
+        required: true
+      AWS_KEY:
+        required: true
 
 jobs:
   build:
