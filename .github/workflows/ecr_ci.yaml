@@ -29,10 +29,14 @@ jobs:
       - name: install docker  
         run: sudo apt install docker -y 
 
+      - name: install docker  
+        run: sudo apt install docker-compose -y
+        
       - name: check aws and docker command
         run: |
           aws --version 
           docker --version
+          docker-compose --version 
           
       - name: systemctl restart docker 
         run: sudo systemctl restart docker 
