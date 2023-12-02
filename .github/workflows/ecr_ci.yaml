@@ -22,15 +22,9 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ID }}
           aws-secret-access-key: ${{ secrets.AWS_KEY }}
           aws-region: ap-northeast-1
-              
-      - name: install aws
-        run: sudo apt install awscli -y 
-        
-      - name: install docker  
-        run: sudo apt install docker -y 
-
-      - name: install docker  
-        run: sudo apt install docker-compose -y
+    
+      - name: install awscli docker docker-compose
+        run: sudo apt install awscli docker docker-compose -y 
         
       - name: check aws and docker command
         run: |
@@ -44,6 +38,12 @@ jobs:
       - name: login ECR
         run: aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/w3l0w0b0
 
+      - name: docker-compose build 
+        run: docker-compose build 
+
+      - name: docker-compose push # 把 images 推到 ECR 上面去
+        run: docker-compose push 
+        
       # - name: dokcer build 
       #   run: docker build -t peter_tester .
 
