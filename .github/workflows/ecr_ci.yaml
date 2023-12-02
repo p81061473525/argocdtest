@@ -13,6 +13,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # 因為懶得再去查看 dind 怎用..就先用 github 的 ubuntu 來安裝吧..
     steps:
       - uses: actions/checkout@v3
       
