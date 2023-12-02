@@ -1,6 +1,6 @@
 ---
-apiVersion: apps/v1
 kind: Deployment
+apiVersion: apps/v1
 metadata:
   name: nginx-deployment
 spec:
@@ -8,6 +8,8 @@ spec:
   selector:
     matchLabels:
       app: nginx
+  strategy:
+    type: RollingUpdate 
   template:
     metadata:
       labels:
