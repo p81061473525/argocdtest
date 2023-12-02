@@ -1,6 +1,8 @@
 # 這是一個範例文件
 # 產生方式
+
 # kubectl create secret generic prod-secrets --from-env-file=.test-env --dry-run=client -o yaml > secrect.yaml
+# 提示，這只是一個範例文件，關於 secrect.yaml 的保護，還需要加深一步，其實不應該上傳到 github 上才對。
 ---
 apiVersion: v1
 data:
