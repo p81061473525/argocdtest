@@ -41,6 +41,9 @@ jobs:
       - name: login ECR
         run: aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/w3l0w0b0
 
+      - name: DEBUG_____env.DEPLOYMENT_GROUP_NAME
+        run:  echo ${{ env.DEPLOYMENT_GROUP_NAME }}
+        
       - name: DEBUG_____cat docker-compose.yaml 
         run: cat docker-compose.yaml
         
