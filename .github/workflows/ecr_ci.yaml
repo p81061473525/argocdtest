@@ -9,7 +9,9 @@ on:
         required: true
       AWS_KEY:
         required: true
-
+env:
+  DEPLOYMENT_GROUP_NAME: 'unknown'
+  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -39,6 +41,9 @@ jobs:
       - name: login ECR
         run: aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/w3l0w0b0
 
+      - name: DEBUG_____cat docker-compose.yaml 
+        run: cat docker-compose.yaml
+        
       - name: docker-compose build 
         run: docker-compose build 
 
