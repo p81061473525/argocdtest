@@ -46,7 +46,7 @@ jobs:
 
       - name: DEBUG .env ls -l 
         run: | 
-          ls -l nginx
+          ls -la nginx
           
       #---------#
       # 登入 ECR #
