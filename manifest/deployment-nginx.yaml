@@ -20,11 +20,11 @@ spec:
         image: nginx:latest  
         ports:
         - containerPort: 80  
-        volumeMounts:
-        - name: nginx-volume
-          readOnly: true
-          mountPath: /etc/nginx/conf.d
-      volumes:
-      - name: nginx-volume
-        configMap:
-          name: nginx-configmap
+      #   volumeMounts:
+      #   - name: nginx-volume
+      #     readOnly: true
+      #     mountPath: /etc/nginx/conf.d
+      # volumes:
+      # - name: nginx-volume
+      #   configMap:
+      #     name: nginx-configmap
