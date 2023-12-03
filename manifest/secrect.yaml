@@ -1,22 +1,22 @@
-# 這是一個範例文件
-# 產生方式
+# # 這是一個範例文件
+# # 產生方式
 
-# kubectl create secret generic prod-secrets --from-env-file=.test-env --dry-run=client -o yaml > secrect.yaml
-# 提示，這只是一個範例文件，關於 secrect.yaml 的保護，還需要加深一步，其實不應該上傳到 github 上才對。
----
-apiVersion: v1
-data:
-  DB_HOST: 範例變數
-  DB_PASSWORD: 範例變數
-  DB_PORT: 範例變數
-  DB_USER: 範例變數
-  GENDER: 範例變數
-  NAME: 範例變數
-  REDIS_HOST: ""
-  REDIS_PASSWORD: ""
-  REDIS_PORT: ""
-  REDIS_USER: ""
-kind: Secret
-metadata:
-  creationTimestamp: null
-  name: mysql-db-connection
+# # kubectl create secret generic prod-secrets --from-env-file=.test-env --dry-run=client -o yaml > secrect.yaml
+# # 提示，這只是一個範例文件，關於 secrect.yaml 的保護，還需要加深一步，其實不應該上傳到 github 上才對。
+# ---
+# apiVersion: v1
+# data:
+#   DB_HOST: 範例變數
+#   DB_PASSWORD: 範例變數
+#   DB_PORT: 範例變數
+#   DB_USER: 範例變數
+#   GENDER: 範例變數
+#   NAME: 範例變數
+#   REDIS_HOST: ""
+#   REDIS_PASSWORD: ""
+#   REDIS_PORT: ""
+#   REDIS_USER: ""
+# kind: Secret
+# metadata:
+#   creationTimestamp: null
+#   name: mysql-db-connection
