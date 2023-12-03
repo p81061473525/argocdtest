@@ -36,6 +36,21 @@ jobs:
       - name: systemctl restart docker 
         run: sudo systemctl restart docker 
         
+      #-------------#
+      # clone .env  #
+      #-------------#
+      
+      - name: aws clone s3 .env 
+        run: |
+          aws s3 cp s3://project-dev-env/dev/dev_env nginx/.env
+
+      - name: DEBUG .env ls -l 
+        run: | 
+          ls -l nginx
+          
+      #---------#
+      # 登入 ECR #
+      #---------#
       - name: login ECR
         run: aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/w3l0w0b0
         
