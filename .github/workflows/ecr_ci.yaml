@@ -35,19 +35,7 @@ jobs:
           
       - name: systemctl restart docker 
         run: sudo systemctl restart docker 
-        
-      #-------------#
-      # clone .env  #
-      #-------------#
       
-      - name: aws clone s3 .env 
-        run: |
-          aws s3 cp s3://project-dev-env/dev/dev_env nginx/.env
-
-      - name: DEBUG .env ls -l 
-        run: | 
-          ls -la nginx
-          
       #---------#
       # 登入 ECR #
       #---------#
