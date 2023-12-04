@@ -33,6 +33,8 @@ jobs:
           git clone git@github.com:p81061473525/argocdtest.git
           cd argocdtest
           touch touch-test
+          git config --global user.email "p81061473525@gmail.com"
+          git config --global user.name "CICD"
           git add . 
           git commit -m "===== touch-test ====="
           git push 
