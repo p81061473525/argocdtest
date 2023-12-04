@@ -9,6 +9,13 @@ jobs:
   argocd:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+
+      - name: source .env
+        run: |
+          source .env 
+          env
+          
       - name: ls -l dir 
         run: |
           ls -l .
@@ -17,17 +24,17 @@ jobs:
         run: | 
           sudo apt install git -y 
           git version
-          
-      - name: git clone argocdtest
-        run: echo "${{ secrets.MY_GITHUB_PRIVATE_KEY }}" > touch
-        
-      - name: touch
+      #--------------#
+      # clone argocd #
+      #--------------#
+      - name: ssh key set 
         run: |
-          ls -l touch
           mkdir ~/.ssh/
-          mv touch ~/.ssh/id_rsa
+          echo "${{ secrets.MY_GITHUB_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 0400 ~/.ssh/id_rsa
-        
+      #--------------#
+      # push  argocd #
+      #--------------#        
       - name: git clone argocdtest-2
         run: |
           git clone git@github.com:p81061473525/argocdtest.git
