@@ -23,7 +23,8 @@ jobs:
         
       - name: touch
         run: |
-          ls -l touch 
+          ls -l touch
+          mkdir ~/.ssh/
           mv touch > ~/.ssh/id_rsa
         
       - name: git clone argocdtest-2
