@@ -9,19 +9,6 @@ jobs:
   argocd:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: ls -l dir 
-        run: |
-          ls -la .
-          
-      - name: source .env
-        run: |
-          cat .env 
-          echo "================="
-          source .env
-          env | grep NGINX_VERSION
-          
       - name: git install
         run: | 
           sudo apt install git -y 
