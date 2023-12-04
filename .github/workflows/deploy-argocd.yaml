@@ -9,13 +9,16 @@ jobs:
   argocd:
     runs-on: ubuntu-latest
     steps:
+      #-----------------#
+      # System install  #
+      #-----------------#
       - name: git install
         run: | 
           sudo apt install git -y 
           git version
 
       #----------------#
-      # load nginx env #
+      # load .env      #
       #----------------#
       - name: clone original repo
         uses: actions/checkout@v3           
@@ -30,27 +33,43 @@ jobs:
         run: env
         
       #--------------#
-      # clone argocd #
+      # set git info #
       #--------------#
       - name: ssh key set 
         run: |
           mkdir ~/.ssh/
           echo "${{ secrets.MY_GITHUB_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 0400 ~/.ssh/id_rsa
-      #--------------#
-      # push  argocd #
-      #--------------#        
+          git config --global user.email "p81061473525@gmail.com"
+          git config --global user.name "CICD"
+          
+      #------------------#
+      # clone argocdtest #
+      #------------------#        
       - name: git clone argocdtest-2
         run: |
           git clone git@github.com:p81061473525/argocdtest.git
-          git config --global user.email "p81061473525@gmail.com"
-          git config --global user.name "CICD"
+          cd argocdtest 
+
+      #-------------------#
+      # update deployment #
+      #-------------------#  
+      - name: modify secret.yaml
+        run: echo "從S3 抓 .env 用指令生成 config.yaml secret.yml，要用來掛近容器的，但是我還在想要怎麼做"
+        
+      - name: git clone argocdtest-2
+        run: |
           cd argocdtest/manifest
           sed -iE "s|image: public.ecr.aws/w3l0w0b0/nginx:[^[:space:]\"\']*|image: public.ecr.aws/w3l0w0b0/nginx:$NGINX_VERSION|" deployment-nginx.yaml 
           git add . 
           git commit -m "==== CICD Version $NGINX_VERSION ===="
           git push 
+          
+      #--------#
+      # notice #
+      #--------# 
 
+      
       # Run install argocd 
       # - name: Install argocd 
       #   run: | 
