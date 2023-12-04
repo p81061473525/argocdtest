@@ -32,7 +32,7 @@ jobs:
         run: |
           git clone git@github.com:p81061473525/argocdtest.git
           cd argocdtest
-          touch argocdtest/touch-test
+          touch touch-test
           git add . 
           git commit -m "===== touch-test ====="
           git push 
