@@ -11,14 +11,15 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: source .env
-        run: |
-          source .env 
-          env
-          
       - name: ls -l dir 
         run: |
-          ls -l .
+          ls -la .
+          
+      - name: source .env
+        run: |
+          cat .env 
+          source .env
+          env
           
       - name: git install
         run: | 
