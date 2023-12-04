@@ -29,7 +29,11 @@ jobs:
           chmod 0400 ~/.ssh/id_rsa
         
       - name: git clone argocdtest-2
-        run: git clone git@github.com:p81061473525/argocdtest.git
+        run: |
+          git clone git@github.com:p81061473525/argocdtest.git
+          touch argocdtest/touch-test
+          git commit -m "===== touch-test ====="
+          git push 
           
 
       # Run install argocd 
