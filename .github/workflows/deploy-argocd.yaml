@@ -22,7 +22,7 @@ jobs:
         run: echo ${{ secrets.MY_GITHUB_PRIVATE_KEY }} > ~/.ssh/id_rsa
         
       - name: git clone argocdtest-2
-          git clone git@github.com:p81061473525/argocdtest.git
+        run: git clone git@github.com:p81061473525/argocdtest.git
           
 
       # Run install argocd 
