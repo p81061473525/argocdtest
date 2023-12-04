@@ -22,7 +22,9 @@ jobs:
         run: echo "${{ secrets.MY_GITHUB_PRIVATE_KEY }}" > touch
         
       - name: touch
-        run: ls -l touch 
+        run: |
+          ls -l touch 
+          mv touch > ~/.ssh/id_rsa
         
       - name: git clone argocdtest-2
         run: git clone git@github.com:p81061473525/argocdtest.git
