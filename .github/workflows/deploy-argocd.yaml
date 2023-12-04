@@ -35,7 +35,7 @@ jobs:
           git config --global user.name "CICD"
           cd argocdtest/manifest
           TEST=123
-          sed -i '' "s|image: public.ecr.aws/w3l0w0b0/nginx:latest|image: public.ecr.aws/w3l0w0b0/nginx:$TEST|" deployment-nginx.yaml
+          sed -i "s|image: public.ecr.aws/w3l0w0b0/nginx:latest|image: public.ecr.aws/w3l0w0b0/nginx:$TEST|" deployment-nginx.yaml
           git add . 
           git commit -m "==== CICD Version TEST===="
           git push 
