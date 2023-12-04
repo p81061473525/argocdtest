@@ -8,13 +8,17 @@ jobs:
       - name: ls -l dir 
         run: |
           ls -l .
+          
       - name: git install
         run: | 
           sudo apt install git -y 
           git version
+          
       - name: git clone argocdtest
         run: |
-          echo ${{ secrets.SuperSecret }} 
+          echo ${{ secrets.MY_GITHUB_PRIVATE_KEY }} > ~/.ssh/id_rsa
+          git clone git@github.com:p81061473525/argocdtest.git
+          
 
       # Run install argocd 
       # - name: Install argocd 
