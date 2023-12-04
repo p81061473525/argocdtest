@@ -48,7 +48,7 @@ jobs:
           cd argocdtest/manifest
           sed -iE "s|image: public.ecr.aws/w3l0w0b0/nginx:[^[:space:]\"\']*|image: public.ecr.aws/w3l0w0b0/nginx:$NGINX_VERSION|" deployment-nginx.yaml 
           git add . 
-          git commit -m "==== CICD Version $NGINX_VERSION===="
+          git commit -m "==== CICD Version $NGINX_VERSION ===="
           git push 
 
       # Run install argocd 
