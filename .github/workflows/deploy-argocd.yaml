@@ -18,7 +18,6 @@ jobs:
       - name: source .env
         run: |
           cat .env 
-          env | grep NGINX_VERSION 
           echo "================="
           source .env
           env | grep NGINX_VERSION
