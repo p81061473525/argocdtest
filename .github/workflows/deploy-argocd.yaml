@@ -13,6 +13,23 @@ jobs:
         run: | 
           sudo apt install git -y 
           git version
+
+      #----------------#
+      # load nginx env #
+      #----------------#
+      - name: clone original repo
+        uses: actions/checkout@v3           
+        
+      - name: Load .env file
+        uses: aarcangeli/load-dotenv@v1.0.0
+        with:
+          path: 'backend/new'
+          filenames: |
+            .env
+            
+      - name: check env
+        run: env
+        
       #--------------#
       # clone argocd #
       #--------------#
