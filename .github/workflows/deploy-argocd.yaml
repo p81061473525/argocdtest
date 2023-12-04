@@ -34,7 +34,6 @@ jobs:
           git config --global user.email "p81061473525@gmail.com"
           git config --global user.name "CICD"
           cd argocdtest/manifest
-          VERSION=1.24
           sed -iE "s|image: public.ecr.aws/w3l0w0b0/nginx:[^[:space:]\"\']*|image: public.ecr.aws/w3l0w0b0/nginx:$VERSION|" deployment-nginx.yaml 
           git add . 
           git commit -m "==== CICD Version $VERSION===="
