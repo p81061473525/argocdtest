@@ -5,11 +5,15 @@ jobs:
   argocd:
     runs-on: ubuntu-latest
     steps:
+      - name: ls -l dir 
+        run: |
+          ls -l .
       - name: git install
         run: | 
           apt install git -y 
           git version
       - name: git clone argocdtest
+        run: |
           echo ${{ secrets.SuperSecret }} 
 
       # Run install argocd 
