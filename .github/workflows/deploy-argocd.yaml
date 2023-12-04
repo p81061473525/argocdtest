@@ -18,8 +18,10 @@ jobs:
       - name: source .env
         run: |
           cat .env 
+          env | grep NGINX_VERSION 
+          echo "================="
           source .env
-          env
+          env | grep NGINX_VERSION
           
       - name: git install
         run: | 
