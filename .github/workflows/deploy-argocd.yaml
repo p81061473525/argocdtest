@@ -1,6 +1,10 @@
 name: deploy-argocd
 on:
   workflow_call:
+    secrets:
+      MY_GITHUB_PRIVATE_KEY:
+        required: true
+      
 jobs:
   argocd:
     runs-on: ubuntu-latest
