@@ -10,7 +10,7 @@ jobs:
           ls -l .
       - name: git install
         run: | 
-          apt install git -y 
+          sudo apt install git -y 
           git version
       - name: git clone argocdtest
         run: |
