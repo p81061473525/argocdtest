@@ -61,7 +61,7 @@ jobs:
         run: |
           cd argocdtest/manifest
           ls -l 
-          sed -i "s|image: public.ecr.aws/w3l0w0b0/nginx:*|image: public.ecr.aws/w3l0w0b0/nginx:$NGINX_VERSION|" deployment-nginx.yaml
+          sed -i "s|image: public.ecr.aws/w3l0w0b0/nginx:*.*.*|image: public.ecr.aws/w3l0w0b0/nginx:$NGINX_VERSION|" deployment-nginx.yaml
           ls -l 
           git add . 
           git commit -m "==== CICD Version $NGINX_VERSION ===="
