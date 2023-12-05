@@ -60,7 +60,9 @@ jobs:
       - name: git clone argocdtest-2
         run: |
           cd argocdtest/manifest
-          sed -iE "s|image: public.ecr.aws/w3l0w0b0/nginx:[^[:space:]\"\']*|image: public.ecr.aws/w3l0w0b0/nginx:$NGINX_VERSION|" deployment-nginx.yaml 
+          ls -l 
+          sed -iE "s|image: public.ecr.aws/w3l0w0b0/nginx:[^[:space:]\"\']*|image: public.ecr.aws/w3l0w0b0/nginx:$NGINX_VERSION|" deployment-nginx.yaml
+          ls -l 
           git add . 
           git commit -m "==== CICD Version $NGINX_VERSION ===="
           git push 
