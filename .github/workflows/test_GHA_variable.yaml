@@ -1,0 +1,22 @@
+name: BE-CI-build
+
+on: push
+
+env:
+  RELEASE: ${{
+    (startsWith(github.ref, 'refs/heads') && 'x') ||
+    (startsWith(github.ref, 'refs/tags/v') && github.ref_name) ||
+    'unknown'
+    }}
+
+jobs:
+  Check_all_enviroment:
+    runs-on: self-hosted
+    # runs-on: ubuntu-latest 
+
+    steps:
+    - name: Test for ENVIRONMENT
+      run: |
+        echo "本次跑的參數如下"
+        echo "RELEASE: ${{ env.RELEASE }}"
+ 
