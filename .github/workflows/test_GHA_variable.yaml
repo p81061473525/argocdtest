@@ -21,5 +21,23 @@ jobs:
         echo "RELEASE: ${{ env.RELEASE }}"
     - name: add file to check dockerbuild 
       run: | 
-        echo "還沒有寫拉......."
+        echo "${{ env.RELEASE }}" > dockerfiletest/.emv
+    - name: 顯示 dockerfiletest/.emv 
+      run: |
+        echo dockerfiletest/.emv
+    - name: Install docker-compose
+      run: |
+        sudo apt install docker-compose -y 
+    - name: docker images ls 
+      run: | 
+        sudo docker images ls 
+    - name: docker build 
+      run: | 
+        sudo docker-compose -f dockfiletest/docker-compose.yml 
+    - name: dokcer images ls again
+      run: | 
+        sudo docker images ls 
+     
+        
+
  
