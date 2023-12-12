@@ -19,4 +19,7 @@ jobs:
       run: |
         echo "本次跑的參數如下"
         echo "RELEASE: ${{ env.RELEASE }}"
+    - name: add file to check dockerbuild 
+      run: | 
+        echo "還沒有寫拉......."
  
