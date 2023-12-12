@@ -28,7 +28,7 @@ jobs:
         echo "NGINX_VERSION=${{ env.RELEASE }}" > dockerfiletest/.env
     - name: 顯示 dockerfiletest/.env 
       run: |
-        echo dockerfiletest/.env
+        cat dockerfiletest/.env
     - name: Install docker-compose
       run: |
         sudo apt install docker-compose -y 
@@ -37,7 +37,7 @@ jobs:
         sudo docker images ls 
     - name: docker build 
       run: | 
-        sudo docker-compose -f dockfiletest/docker-compose.yml build
+        sudo docker-compose -f dockerfiletest/docker-compose.yml build
     - name: dokcer images ls again
       run: | 
         sudo docker images ls 
