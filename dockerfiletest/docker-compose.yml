@@ -1,6 +1,7 @@
 services:
   nginx:
     build:
+      context: .
       dockerfile: dockerfile
     image: "public.ecr.aws/w3l0w0b0/nginx:${NGINX_VERSION}"
     container_name: nginx_peter
