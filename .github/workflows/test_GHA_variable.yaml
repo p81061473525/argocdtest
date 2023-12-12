@@ -37,7 +37,7 @@ jobs:
         sudo docker images ls 
     - name: docker build 
       run: | 
-        sudo docker-compose -f dockfiletest/docker-compose.yml 
+        sudo docker-compose -f dockfiletest/docker-compose.yml build
     - name: dokcer images ls again
       run: | 
         sudo docker images ls 
