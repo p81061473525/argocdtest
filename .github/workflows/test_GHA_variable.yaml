@@ -32,9 +32,9 @@ jobs:
     - name: Install docker-compose
       run: |
         sudo apt install docker-compose -y 
-    - name: docker images ls 
+    - name: docker images 
       run: | 
-        sudo docker images ls 
+        sudo docker images
     - name: docker build 
       run: | 
         sudo docker-compose -f dockerfiletest/docker-compose.yml build
@@ -43,7 +43,7 @@ jobs:
         sleep 5 
     - name: dokcer images ls again
       run: | 
-        sudo docker images ls 
+        sudo docker images
      
         
 
