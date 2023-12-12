@@ -19,13 +19,13 @@ jobs:
       run: |
         echo "本次跑的參數如下"
         echo "RELEASE: ${{ env.RELEASE }}"
-        
+
     - name: clone this repo.
       uses: actions/checkout@v3
 
     - name: add file to check dockerbuild 
       run: | 
-        echo "${{ env.RELEASE }}" > dockerfiletest/.env
+        echo "NGINX_VERSION=${{ env.RELEASE }}" > dockerfiletest/.env
     - name: 顯示 dockerfiletest/.env 
       run: |
         echo dockerfiletest/.env
