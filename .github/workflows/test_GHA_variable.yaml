@@ -38,6 +38,9 @@ jobs:
     - name: docker build 
       run: | 
         sudo docker-compose -f dockerfiletest/docker-compose.yml build
+    - name: sleep 5 
+      run: |
+        sleep 5 
     - name: dokcer images ls again
       run: | 
         sudo docker images ls 
